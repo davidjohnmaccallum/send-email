@@ -1,6 +1,6 @@
 # Send Email
 
-Sends an Email using SendGrid.
+Sends an Email using SendGrid. Hosted as a Firebase Function.
 
 Includes access control via an X-API-Key header.
 
