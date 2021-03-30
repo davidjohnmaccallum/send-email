@@ -13,6 +13,7 @@ Create a .env file in the functions folder with the following environment variab
 ```
 SENDGRID_API_KEY=SG.xxx
 FROM_EMAIL=xxx
+API_KEY=xxx
 ```
 
 Create a Firebase project.
@@ -29,5 +30,5 @@ npm run deploy
 Send a message (replace to param with your number).
 
 ```sh
-curl [Replace with function URL from Firebase console]/welcome-email -d '{"name":"Paul", "to":"you@email.address"}' --header "Content-Type: application/json" --header "X-API-Key: 1234"
+curl [Replace with function URL from Firebase console]/welcome-email -d '{"name":"Paul", "to":"you@email.address"}' --header "Content-Type: application/json" --header "X-API-Key: [your api key]"
 ```

@@ -8,10 +8,11 @@ const app = express()
 app.use(bodyParser.json())
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-const from = process.env.FROM_EMAIL;
+const from = process.env.FROM_EMAIL
+const apiKey = process.env.API_KEY
 
 app.use((req,res,next) => {
-  if (req.get('X-API-Key') !== '1234') {
+  if (req.get('X-API-Key') !== apiKey) {
     return res.status(401).send({
       err: 'Missing or invalid X-API-Key header'
     })
