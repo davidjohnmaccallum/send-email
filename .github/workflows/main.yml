@@ -35,13 +35,12 @@ jobs:
       - name: Use gcloud CLI
         run: gcloud info
 
-      # - id: deploy
-      #   uses: google-github-actions/deploy-cloud-functions@main
-      #   with:
-      #     name: sendEmail
-      #     runtime: nodejs10
-      #     credentials: ${{ secrets.GCP_CREDENTIALS }}
+      - id: deploy
+        uses: google-github-actions/deploy-cloud-functions@main
+        with:
+          name: sendEmail
+          runtime: nodejs10
 
-      # # Example of using the output
-      # - id: test
-      #   run: curl "${{ steps.deploy.outputs.url }}"
+      # Example of using the output
+      - id: test
+        run: curl "${{ steps.deploy.outputs.url }}"
